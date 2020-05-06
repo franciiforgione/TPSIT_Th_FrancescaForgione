@@ -1,0 +1,61 @@
+/**
+ * 
+ */
+
+/**
+ * @author Francesca Forgione
+ *
+ */
+public class Campana implements Runnable {
+
+	String suono;
+	int volte;
+
+	public Campana (String suono, int volte) {
+		this.suono = suono;
+		this.volte = volte;
+	}
+
+	@Override
+	public void run() {
+		for (int i = 0; i<volte; i++) {
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(suono);
+		}
+	}
+
+}
+
+
+/**
+ * 
+ */
+
+/**
+ * @author Francesca Forgione
+ *
+ */
+public class DinDonDan {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Thread thrd1 = new Thread (new Campana("din", 3));
+		thrd1.start();
+
+		Thread thrd2 = new Thread (new Campana("don", 3));
+		thrd2.start();
+
+		Thread thrd3 = new Thread (new Campana("dan", 3));
+		thrd3.start();
+
+	}
+
+}
+
+
