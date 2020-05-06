@@ -1,0 +1,52 @@
+
+public class ContaNani extends Thread{
+	public void ProvaAdessoNani (String nome) {
+		
+		setName(nome);
+	}
+	
+	public void run () {
+		
+		for (int i = 0; i<7; i++) {
+			System.out.println((i + 1) + " " + getName());
+		}
+	}
+}
+
+
+
+public class ProvaNani {
+
+	public ProvaNani(String string) {
+	}
+
+	public void start() {
+
+	}
+
+}
+
+
+
+public class TestProvaNani {
+public static void main(String[] args) {
+		
+		ProvaNani thr1 = new ProvaNani("Dotto");
+		ProvaNani thr2 = new ProvaNani("Brontolo");
+		ProvaNani thr3 = new ProvaNani("Psiolo");
+		ProvaNani thr4 = new ProvaNani("Mammolo");
+		ProvaNani thr5 = new ProvaNani("Gongolo");
+		ProvaNani thr6 = new ProvaNani("Eolo");
+		ProvaNani thr7 = new ProvaNani("Cucciolo");
+		
+		thr1.start();
+		thr2.start();
+		thr3.start();
+		thr4.start();
+		thr5.start();
+		thr6.start();
+		thr7.start();
+		
+
+	}
+}
